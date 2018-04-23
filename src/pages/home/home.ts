@@ -21,8 +21,10 @@ export class HomePage {
   }
   getPicture(){
     this.camera.getPicture(this.options).then((ImageData) => {
-      
-    })
+      this.image = 'data:image/jpeg;base64' + ImageData;
+    }, (err) =>{ 
+      console.log("error");
+    });
   }
 
 }
